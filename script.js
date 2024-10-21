@@ -1,16 +1,27 @@
 // Variables globales
 let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
-// Sélectionne les éléments du DOM
+// Sélection des éléments du DOM
 const addToCartButtons = document.querySelectorAll('.add-to-cart');
 const cartItems = document.getElementById('cart-items');
 const cartSubtotal = document.getElementById('cart-subtotal');
 const cartTVA = document.getElementById('cart-tva');
 const cartTotal = document.getElementById('cart-total');
-const clearCartButton = document.getElementById('clear-cart'); // Ancien bouton "Vider le panier"
-const continueShoppingButton = document.getElementById('continue-shopping'); // Nouveau bouton "Continuer achat"
-
+const clearCartButton = document.getElementById('clear-cart');
+const continueShoppingButton = document.getElementById('continue-shopping');
 const checkoutButton = document.getElementById('checkout-btn');
+
+// Fonction pour afficher une notification (optionnel)
+function showNotification(message) {
+    const notification = document.getElementById('notification');
+    notification.textContent = message;
+    notification.classList.add('show');
+
+    // Masquer la notification après 3 secondes
+    setTimeout(() => {
+        notification.classList.remove('show');
+    }, 3000);
+}
 
 // Fonction pour ajouter un produit au panier
 function addToCart(event) {
@@ -28,6 +39,11 @@ function addToCart(event) {
     }
 
     updateCart();
+
+    // Afficher une alerte indiquant que le produit a été ajouté au panier
+    alert(`Vous avez ajouté "${productName}" au panier.`);
+    // Si vous préférez utiliser une notification personnalisée, commentez la ligne ci-dessus et décommentez la suivante
+    // showNotification(`Vous avez ajouté "${productName}" au panier.`);
 }
 
 // Fonction pour mettre à jour l'affichage du panier
@@ -36,7 +52,7 @@ function updateCart() {
     localStorage.setItem('cart', JSON.stringify(cart));
 
     // Vérifier si les éléments du panier existent sur la page
-    if (cartItems && cartTotal) {
+    if (cartItems && cartSubtotal && cartTVA && cartTotal) {
         cartItems.innerHTML = '';
         let subtotal = 0;
 
@@ -69,10 +85,12 @@ function updateCart() {
     }
 }
 
-// Fonction pour vider le panier (optionnelle, si vous souhaitez conserver cette fonctionnalité)
+// Fonction pour vider le panier avec confirmation
 function clearCart() {
-    cart = [];
-    updateCart();
+    if (confirm('Êtes-vous sûr de vouloir vider le panier ?')) {
+        cart = [];
+        updateCart();
+    }
 }
 
 // Fonction pour continuer les achats
@@ -88,12 +106,17 @@ if (addToCartButtons.length > 0) {
     });
 }
 
+// Attacher l'événement pour le bouton "Vider le panier"
+if (clearCartButton) {
+    clearCartButton.addEventListener('click', clearCart);
+}
+
 // Attacher l'événement pour le bouton "Continuer achat"
 if (continueShoppingButton) {
     continueShoppingButton.addEventListener('click', continueShopping);
 }
 
-// Attacher l'événement pour le bouton "Valider la commande" (à implémenter selon vos besoins)
+// Attacher l'événement pour le bouton "Valider la commande"
 if (checkoutButton) {
     checkoutButton.addEventListener('click', () => {
         // Ici, vous pouvez ajouter la logique pour la validation de la commande
