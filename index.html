@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Chez Kastou - Équipements de Protection et Assistance</title>
+  <!-- Lien vers votre fichier CSS -->
+  <link rel="stylesheet" href="style.css">
+  <!-- Lien vers les polices Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <!-- Lien vers la bibliothèque d'animations AOS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+  <link rel="icon" href="Cours/logo.png" type="image/png">
+</head>
+<body>
+<!-- En-tête du site -->
+<header>
+  <div class="container_header">
+    <div class="logo">
+      <img src="Cours/logo.png" alt="Logo de Chez Kastou">
+    </div>
+    <h1 class="site-title">Chez Kastou</h1>
+    <nav>
+      <ul>
+        <li><a href="#">🏠Accueil</a></li>
+        <li><a href="produits.html">📦Produits</a></li>
+        <li><a href="apropos.html">📍À propos</a></li>
+        <li><a href="contact.html">📧Contact</a></li>
+        <li><a href="panier.html" class="btn-cart">🛒 Panier</a>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+
+
+<!-- Section principale avec animation -->
+<section class="hero" data-aos="fade-in">
+  <div class="container">
+    <h1>Bienvenue chez Kastou</h1>
+    <p>Votre partenaire pour les équipements de protection et d'assistance.</p>
+  </div>
+</section>
+<!-- Présentation des produits -->
+<section id="produits" class="products">
+  <div class="container">
+    <h2 data-aos="fade-up">Nos Best-Sellers</h2>
+    <div class="product-grid" style="display: flex">
+      <!-- Produit 1 : Système d'assistance électrique -->
+      <div class="product-item" data-id="1" data-name="Taser" data-price="30" data-aos="zoom-in" style="display: flex; flex-direction: column; justify-content: space-between">
+        <img src="Cours/assistance_electrique.png" alt="Tazer">
+        <div>
+          <h3>Taser</h3>
+          <p>Prix : 30 €</p>
+          <button class="add-to-cart">Ajouter au panier</button>
+          <p>Pour un civil qui vous empêche de rénover</p>
+        </div>
+      </div>
+      <!-- Produit 2 : Pied de biche -->
+      <div class="product-item" data-id="2" data-name="Pied de biche" data-price="12" data-aos="zoom-in" data-aos-delay="100" style="display: flex; flex-direction: column; justify-content: space-between">
+        <img src="Cours/pied_de_biche.png" alt="Pied de biche">
+        <div>
+          <h3>Pied de biche</h3>
+          <p>Prix : 12€</p>
+          <button class="add-to-cart">Ajouter au panier</button>
+          <p>Outil polyvalent.</p>
+        </div>
+      </div>
+      <!-- Produit 3 : Cagoule -->
+      <div class="product-item" data-id="3" data-name="Cagoule" data-price="8" data-aos="zoom-in" data-aos-delay="200" style="display: flex; flex-direction: column; justify-content: space-between">
+        <img src="Cours/cagoule.png" alt="Cagoule">
+        <div>
+          <h3>Cagoule</h3>
+          <p>Prix : 8 €</p>
+          <button class="add-to-cart">Ajouter au panier</button>
+          <p> Protège du froid.</p>
+        </div>
+      </div>
+    </div>
+    <!-- Lien vers la page de la catégorie de produits -->
+    <div class="more-products">
+      <a href="produits.html" class="btn">Voir tous les produits</a>
+    </div>
+  </div>
+</section>
+
+<!-- Section À propos -->
+<section id="apropos" class="about">
+  <div class="container">
+    <h2 data-aos="fade-up">Qui sommes-nous ?</h2>
+    <p data-aos="fade-up" data-aos-delay="100">
+      Fondée à Gonfreville en 2023, Chez Kastou est une entreprise dédiée à fournir des équipements de protection et d'assistance de haute qualité. Notre mission est de vous offrir les meilleurs produits pour que vous puissiez accomplir vos projets en toute sécurité.
+    </p>
+  </div>
+</section>
+
+<!-- Section Contact -->
+
+
+<!-- Pied de page -->
+
+<footer>
+  <hr/>
+  <div class="container_footer">
+    <div class="footer-block">
+      <p>Chez Kastou SAS Société par actions simplifiée au capital de 10,50 Euros<br/>
+        24 avenue de la Corne Muze, Gonfreville 54300<br>
+       <div class="site"> <p>Site à but humoristique</p></div>
+    </div>
+    <div class="footer-block">
+      <p>Email: Kastou@gmail.com<br/>
+        Télephone: 09.21.45.72.90</p>
+    </div>
+  </div>
+  <hr>
+
+  <section class="bottomfoot">
+    <div class="politique"><p>Politique de confidentialité</p></div>
+    <div class="politique"><p>Conditions d’utilisation</p></div>
+    <div class="politique"><p>Digital accessibility (FR)</p></div>
+    <div class="politique"><p>Conditions de réservation CCPA (FR)</p></div>
+    <div class="annee">
+      <p>©2024 Kastou. All Rights Reserved</p>
+    </div>
+  </section>
+
+</footer>
+
+
+<!-- Scripts -->
+<!-- Bibliothèque AOS pour les animations -->
+<script src="script.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 1000,
+    once: true,
+  });
+</script>
+</body>
+</html>
