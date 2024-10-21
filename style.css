@@ -10,6 +10,7 @@ body {
     align-items: center; /* Aligne les éléments verticalement */
     justify-content: space-between; /* Répartit l'espace entre les éléments */
     padding-left: 20px; /* Ajoute de l'espace à gauche et à droite */
+    padding-right: 20px
     padding-bottom: 40px;
     width: 100%; /* Assure que le conteneur occupe toute la largeur */
     box-sizing: border-box; /* Assure que le padding est inclus dans la taille totale */
