@@ -10,7 +10,6 @@ body {
     align-items: center; /* Aligne les éléments verticalement */
     justify-content: space-between; /* Répartit l'espace entre les éléments */
     padding-left: 20px; /* Ajoute de l'espace à gauche et à droite */
-    padding-right: 20px
     padding-bottom: 40px;
     width: 100%; /* Assure que le conteneur occupe toute la largeur */
     box-sizing: border-box; /* Assure que le padding est inclus dans la taille totale */
@@ -155,6 +154,37 @@ header {
 .more-products {
     text-align: center;
     margin-top: 40px;
+}
+
+/* Styles pour la notification */
+.notification {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: #4caf50; /* Couleur verte pour le succès */
+    color: white;
+    padding: 15px 20px;
+    border-radius: 5px;
+    display: none; /* Masqué par défaut */
+    z-index: 1000;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+    font-size: 16px;
+}
+
+.notification.show {
+    display: block;
+    animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+/* Animations pour la notification */
+@keyframes fadein {
+    from { opacity: 0; right: 0; }
+    to { opacity: 1; right: 20px; }
+}
+
+@keyframes fadeout {
+    from { opacity: 1; right: 20px; }
+    to { opacity: 0; right: 0; }
 }
 
 /* Styles pour le bouton "Ajouter au panier" */
